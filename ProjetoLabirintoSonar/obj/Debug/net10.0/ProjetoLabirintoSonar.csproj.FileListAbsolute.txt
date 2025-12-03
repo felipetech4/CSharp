@@ -1,0 +1,14 @@
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\bin\Debug\net10.0\ProjetoLabirintoSonar.exe
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\bin\Debug\net10.0\ProjetoLabirintoSonar.deps.json
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\bin\Debug\net10.0\ProjetoLabirintoSonar.runtimeconfig.json
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\bin\Debug\net10.0\ProjetoLabirintoSonar.dll
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\bin\Debug\net10.0\ProjetoLabirintoSonar.pdb
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.AssemblyInfoInputs.cache
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.AssemblyInfo.cs
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.csproj.CoreCompileInputs.cache
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.dll
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\refint\ProjetoLabirintoSonar.dll
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.pdb
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.genruntimeconfig.cache
+c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ref\ProjetoLabirintoSonar.dll
