@@ -1,4 +1,11 @@
-﻿int minimoGrid = 0;
+﻿/*Pendente:
+    - Parte 4.2: Regra para o usuário não sair do limite do grid, se tentar sair avisar com "Parede!" e não diminuir a bateria;
+    - Parte 5 (toda): A parte difícl;
+    - Parte 6: Desafio Extra;
+    - Revisar código.
+*/
+
+int minimoGrid = 0;
 int maximoGrid = 9;
 int jogadorX = 0;
 int jogadorY = 0;
