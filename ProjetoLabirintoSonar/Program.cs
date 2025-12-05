@@ -1,26 +1,41 @@
 ﻿int minimoGrid = 0;
 int maximoGrid = 9;
-int jogadorX;
-int jogadorY;
-int saidaX;
-int saidaY;
-int monstroX;
-int monstroY;
+int jogadorX = 0;
+int jogadorY = 0;
+int saidaX = 0;
+int saidaY = 0;
+int monstroX = 0;
+int monstroY = 0;
 string comando;
 bool comandoValido;
 
 Random sorteador = new Random();
 
-jogadorX = sorteador.Next(minimoGrid, maximoGrid);
-jogadorY = sorteador.Next(minimoGrid, maximoGrid);
-saidaX = sorteador.Next(minimoGrid, maximoGrid);
-saidaY = sorteador.Next(minimoGrid, maximoGrid);
-monstroX = sorteador.Next(minimoGrid, maximoGrid);
-monstroY = sorteador.Next(minimoGrid, maximoGrid);
+do
+{
+    jogadorX = sorteador.Next(minimoGrid, maximoGrid);
+    jogadorY = sorteador.Next(minimoGrid, maximoGrid);
+} while((jogadorX == monstroX && jogadorY == monstroY) || (jogadorX == saidaX && jogadorY == saidaY));
+
+do
+{
+    saidaX = sorteador.Next(minimoGrid, maximoGrid);
+    saidaY = sorteador.Next(minimoGrid, maximoGrid);
+} while((saidaX == monstroX && saidaY == monstroY) || (saidaX == jogadorX && saidaY == jogadorY));
+
+do
+{
+    monstroX = sorteador.Next(minimoGrid, maximoGrid);
+    monstroY = sorteador.Next(minimoGrid, maximoGrid);
+} while((monstroX == jogadorX && monstroY == jogadorY) || (monstroX == saidaX && monstroY == saidaY));
 
 //Saída no console temporária. Apenas para acompanhar o raciocínio
 Console.WriteLine("Jogador X: " + jogadorX);
 Console.WriteLine("Jogador Y: " + jogadorY);
+Console.WriteLine("Saída X: " + saidaX);
+Console.WriteLine("Saída Y: " + saidaY);
+Console.WriteLine("Monstro X: " + monstroX);
+Console.WriteLine("Monstro Y: " + monstroY);
 
 Console.WriteLine("Informe um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
 
@@ -65,3 +80,7 @@ do
 //Saída no console temporária. Apenas para acompanhar o raciocínio
 Console.WriteLine("Jogador X: " + jogadorX);
 Console.WriteLine("Jogador Y: " + jogadorY);
+Console.WriteLine("Saída X: " + saidaX);
+Console.WriteLine("Saída Y: " + saidaY);
+Console.WriteLine("Monstro X: " + monstroX);
+Console.WriteLine("Monstro Y: " + monstroY);
