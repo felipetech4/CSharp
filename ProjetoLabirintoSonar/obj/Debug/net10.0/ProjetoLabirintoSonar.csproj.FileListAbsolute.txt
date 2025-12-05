@@ -12,3 +12,4 @@ c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\refint\Proje
 c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.pdb
 c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.genruntimeconfig.cache
 c:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ref\ProjetoLabirintoSonar.dll
+C:\Users\felipe\Projetos\C#\ProjetoLabirintoSonar\obj\Debug\net10.0\ProjetoLabirintoSonar.sourcelink.json
