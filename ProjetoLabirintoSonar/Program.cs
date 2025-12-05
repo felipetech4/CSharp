@@ -8,26 +8,30 @@ int monstroX = 0;
 int monstroY = 0;
 string comando;
 bool comandoValido;
-
+//Ajustar o valor da bateria para 20, mudei apenas para teste.
+int bateria = 5;
+bool jogadorVenceu = false;
+bool monstroVenceu = false;
+bool bateriaAcabou = false;
 Random sorteador = new Random();
 
 do
 {
     jogadorX = sorteador.Next(minimoGrid, maximoGrid);
     jogadorY = sorteador.Next(minimoGrid, maximoGrid);
-} while((jogadorX == monstroX && jogadorY == monstroY) || (jogadorX == saidaX && jogadorY == saidaY));
+} while ((jogadorX == monstroX && jogadorY == monstroY) || (jogadorX == saidaX && jogadorY == saidaY));
 
 do
 {
     saidaX = sorteador.Next(minimoGrid, maximoGrid);
     saidaY = sorteador.Next(minimoGrid, maximoGrid);
-} while((saidaX == monstroX && saidaY == monstroY) || (saidaX == jogadorX && saidaY == jogadorY));
+} while ((saidaX == monstroX && saidaY == monstroY) || (saidaX == jogadorX && saidaY == jogadorY));
 
 do
 {
     monstroX = sorteador.Next(minimoGrid, maximoGrid);
     monstroY = sorteador.Next(minimoGrid, maximoGrid);
-} while((monstroX == jogadorX && monstroY == jogadorY) || (monstroX == saidaX && monstroY == saidaY));
+} while ((monstroX == jogadorX && monstroY == jogadorY) || (monstroX == saidaX && monstroY == saidaY));
 
 //Saída no console temporária. Apenas para acompanhar o raciocínio
 Console.WriteLine("Jogador X: " + jogadorX);
@@ -36,51 +40,79 @@ Console.WriteLine("Saída X: " + saidaX);
 Console.WriteLine("Saída Y: " + saidaY);
 Console.WriteLine("Monstro X: " + monstroX);
 Console.WriteLine("Monstro Y: " + monstroY);
+Console.WriteLine("Bateria: " + bateria);
 
-Console.WriteLine("Informe um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
-
+//Laço que determina o fim do jogo
 do
 {
-    comando = Console.ReadLine();
 
-
-    switch (comando)
+    Console.WriteLine("Informe um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
+    //Laço para os casos em que o usuário informa um comando inválido
+    do
     {
-        case "W":
-            comandoValido = true;
-            jogadorX--;
-            Console.WriteLine("Você clicou para Cima");
-            break;
+        comando = Console.ReadLine();
 
-        case "A":
-            comandoValido = true;
-            jogadorY--;
-            Console.WriteLine("Você clicou para Esquerda");
-            break;
+        switch (comando)
+        {
+            case "W":
+                comandoValido = true;
+                jogadorX--;
+                bateria--;
+                Console.WriteLine("Você clicou para Cima");
+                break;
 
-        case "S":
-            comandoValido = true;
-            jogadorX++;
-            Console.WriteLine("Você clicou para Baixo");
-            break;
+            case "A":
+                comandoValido = true;
+                jogadorY--;
+                bateria--;
+                Console.WriteLine("Você clicou para Esquerda");
+                break;
 
-        case "D":
-            comandoValido = true;
-            jogadorY++;
-            Console.WriteLine("Você clicou para Direita");
-            break;
+            case "S":
+                comandoValido = true;
+                jogadorX++;
+                bateria--;
+                Console.WriteLine("Você clicou para Baixo");
+                break;
 
-        default:
-            comandoValido = false;
-            Console.WriteLine("Informe um comando válido:");
-            break;
+            case "D":
+                comandoValido = true;
+                jogadorY++;
+                bateria--;
+                Console.WriteLine("Você clicou para Direita");
+                break;
+
+            default:
+                comandoValido = false;
+                Console.WriteLine("Informe um comando válido:");
+                break;
+        }
+    } while (comandoValido == false);
+
+    //Saída no console temporária. Apenas para acompanhar o raciocínio
+    Console.WriteLine("Jogador X: " + jogadorX);
+    Console.WriteLine("Jogador Y: " + jogadorY);
+    Console.WriteLine("Saída X: " + saidaX);
+    Console.WriteLine("Saída Y: " + saidaY);
+    Console.WriteLine("Monstro X: " + monstroX);
+    Console.WriteLine("Monstro Y: " + monstroY);
+    Console.WriteLine("Bateria: " + bateria);
+
+    if (jogadorX == saidaX && jogadorY == saidaY)
+    {
+        jogadorVenceu = true;
+        Console.WriteLine("Você encontrou a luz!");
     }
-} while (comandoValido == false);
+    else if (jogadorX == monstroX && jogadorY == monstroY)
+    {
+        monstroVenceu = true;
+        Console.WriteLine("O monstro te pegou!");
+    }
+    else if (bateria == 0)
+    {
+        bateriaAcabou = true;
+        Console.WriteLine("Sua lanterna apagou. Escuridão eterna.");
+    }
 
-//Saída no console temporária. Apenas para acompanhar o raciocínio
-Console.WriteLine("Jogador X: " + jogadorX);
-Console.WriteLine("Jogador Y: " + jogadorY);
-Console.WriteLine("Saída X: " + saidaX);
-Console.WriteLine("Saída Y: " + saidaY);
-Console.WriteLine("Monstro X: " + monstroX);
-Console.WriteLine("Monstro Y: " + monstroY);
+} while (jogadorVenceu == false && monstroVenceu == false && bateriaAcabou == false);
+
