@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoLabirintoSonar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74b74d7510059250c7665bb065766cbfeefbede9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ccfa598e0e0a4714d21ce59de61c17d3ce1e475")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoLabirintoSonar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoLabirintoSonar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

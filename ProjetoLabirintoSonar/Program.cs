@@ -18,6 +18,7 @@ saidaY = sorteador.Next(minimoGrid, maximoGrid);
 monstroX = sorteador.Next(minimoGrid, maximoGrid);
 monstroY = sorteador.Next(minimoGrid, maximoGrid);
 
+//Saída no console temporária. Apenas para acompanhar o raciocínio
 Console.WriteLine("Jogador X: " + jogadorX);
 Console.WriteLine("Jogador Y: " + jogadorY);
 
@@ -61,5 +62,6 @@ do
     }
 } while (comandoValido == false);
 
+//Saída no console temporária. Apenas para acompanhar o raciocínio
 Console.WriteLine("Jogador X: " + jogadorX);
 Console.WriteLine("Jogador Y: " + jogadorY);
