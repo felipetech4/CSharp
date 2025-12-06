@@ -52,7 +52,9 @@ do
             case ConsoleKey.W:
                 if (jogadorX == minimoGrid)
                 {
+                    Console.WriteLine("\n-----------------------------");
                     Console.WriteLine("\nParede!");
+                    Console.WriteLine("-----------------------------");
                 }
                 else
                 {
@@ -65,7 +67,9 @@ do
             case ConsoleKey.A:
                 if (jogadorY == minimoGrid)
                 {
+                    Console.WriteLine("\n-----------------------------");
                     Console.WriteLine("\nParede!");
+                    Console.WriteLine("-----------------------------");
                 }
                 else
                 {
@@ -78,7 +82,9 @@ do
             case ConsoleKey.S:
                 if (jogadorX == maximoGrid - 1)
                 {
+                    Console.WriteLine("\n-----------------------------");
                     Console.WriteLine("\nParede!");
+                    Console.WriteLine("-----------------------------");
                 }
                 else
                 {
@@ -91,7 +97,9 @@ do
             case ConsoleKey.D:
                 if (jogadorY == maximoGrid - 1)
                 {
+                    Console.WriteLine("\n-----------------------------");
                     Console.WriteLine("\nParede!");
+                    Console.WriteLine("-----------------------------");
                 }
                 else
                 {
@@ -103,7 +111,8 @@ do
 
             default:
                 comandoValido = false;
-                Console.WriteLine("\nInforme um comando válido:");
+                Console.WriteLine("\n-----------------------------");
+                Console.WriteLine("Informe um comando válido:");
                 break;
         }
     } while (comandoValido == false);
@@ -134,17 +143,20 @@ do
     //Condições para o Sistema Sonar
     if (distanciaSaida <= 2)
     {
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("O sensor apita rápido! A saída está muito perto!");
         Console.WriteLine("-----------------------------");
     }
     else if (distanciaSaida <= 5)
     {
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("O sensor apita devagar.");
         Console.WriteLine("-----------------------------");
     }
 
     if (distanciaMonstro == 1)
     {
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("Cheiro podre muito forte!");
         Console.WriteLine("-----------------------------");
     }
@@ -153,18 +165,21 @@ do
     if (jogadorX == saidaX && jogadorY == saidaY)
     {
         jogadorVenceu = true;
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("Você encontrou a luz!");
         Console.WriteLine("-----------------------------");
     }
     else if (jogadorX == monstroX && jogadorY == monstroY)
     {
         monstroVenceu = true;
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("O monstro te pegou!");
         Console.WriteLine("-----------------------------");
     }
     else if (bateria == 0)
     {
         bateriaAcabou = true;
+        Console.WriteLine("\n-----------------------------");
         Console.WriteLine("Sua lanterna apagou. Escuridão eterna.");
         Console.WriteLine("-----------------------------");
     }
