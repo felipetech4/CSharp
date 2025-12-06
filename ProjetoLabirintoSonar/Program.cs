@@ -1,6 +1,4 @@
 ﻿/*Pendente:
-    - Parte 4.2: Regra para o usuário não sair do limite do grid, se tentar sair avisar com "Parede!" e não diminuir a bateria;
-    - Parte 5 (toda): A parte difícl;
     - Parte 6: Desafio Extra;
     - Revisar código.
 */
@@ -39,20 +37,11 @@ do
     monstroY = sorteador.Next(minimoGrid, maximoGrid);
 } while ((monstroX == jogadorX && monstroY == jogadorY) || (monstroX == saidaX && monstroY == saidaY));
 
-//Saída no console temporária. Apenas para acompanhar o raciocínio
-Console.WriteLine("Jogador X: " + jogadorX);
-Console.WriteLine("Jogador Y: " + jogadorY);
-Console.WriteLine("Saída X: " + saidaX);
-Console.WriteLine("Saída Y: " + saidaY);
-Console.WriteLine("Monstro X: " + monstroX);
-Console.WriteLine("Monstro Y: " + monstroY);
-Console.WriteLine("Bateria: " + bateria);
-
 //Laço que determina o fim do jogo
 do
 {
+    Console.WriteLine("\nInforme um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
 
-    Console.WriteLine("Informe um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
     //Laço para os casos em que o usuário informa um comando inválido
     do
     {
@@ -63,67 +52,72 @@ do
             case ConsoleKey.W:
                 if (jogadorX == minimoGrid)
                 {
-                    Console.WriteLine("Parede!");
+                    Console.WriteLine("\nParede!");
                 }
                 else
                 {
                     comandoValido = true;
                     jogadorX--;
                     bateria--;
-                    Console.WriteLine("Você clicou para Cima");
                 }
                 break;
 
             case ConsoleKey.A:
                 if (jogadorY == minimoGrid)
                 {
-                    Console.WriteLine("Parede!");
+                    Console.WriteLine("\nParede!");
                 }
                 else
                 {
                     comandoValido = true;
                     jogadorY--;
                     bateria--;
-                    Console.WriteLine("Você clicou para Esquerda");
                 }
                 break;
 
             case ConsoleKey.S:
                 if (jogadorX == maximoGrid - 1)
                 {
-                    Console.WriteLine("Parede!");
+                    Console.WriteLine("\nParede!");
                 }
                 else
                 {
                     comandoValido = true;
                     jogadorX++;
                     bateria--;
-                    Console.WriteLine("Você clicou para Baixo");
                 }
                 break;
 
             case ConsoleKey.D:
                 if (jogadorY == maximoGrid - 1)
                 {
-                    Console.WriteLine("Parede!");
+                    Console.WriteLine("\nParede!");
                 }
                 else
                 {
                     comandoValido = true;
                     jogadorY++;
                     bateria--;
-                    Console.WriteLine("Você clicou para Direita");
                 }
                 break;
 
             default:
                 comandoValido = false;
-                Console.WriteLine("Informe um comando válido:");
+                Console.WriteLine("\nInforme um comando válido:");
                 break;
         }
     } while (comandoValido == false);
 
-    //Saída no console temporária. Apenas para acompanhar o raciocínio
+
+    int distanciaSaida = Math.Abs(jogadorX - saidaX) + Math.Abs(jogadorY - saidaY);
+    int distanciaMonstro = Math.Abs(jogadorX - monstroX) + Math.Abs(jogadorY - monstroY);
+
+    /*
+    //Apenas para me localizar. Remover após implementação completa.
+
+    Console.WriteLine("\n-----------------------------");
+    Console.WriteLine("Análise após o seu movimento:");
+    Console.WriteLine("-----------------------------");
     Console.WriteLine("Jogador X: " + jogadorX);
     Console.WriteLine("Jogador Y: " + jogadorY);
     Console.WriteLine("Saída X: " + saidaX);
@@ -131,21 +125,48 @@ do
     Console.WriteLine("Monstro X: " + monstroX);
     Console.WriteLine("Monstro Y: " + monstroY);
     Console.WriteLine("Bateria: " + bateria);
+    Console.WriteLine("-----------------------------");
+    Console.WriteLine("Distância Saída: " + distanciaSaida);
+    Console.WriteLine("Distância Monstro: " + distanciaMonstro);
+    Console.WriteLine("-----------------------------");
+    */
 
+    //Condições para o Sistema Sonar
+    if (distanciaSaida <= 2)
+    {
+        Console.WriteLine("O sensor apita rápido! A saída está muito perto!");
+        Console.WriteLine("-----------------------------");
+    }
+    else if (distanciaSaida <= 5)
+    {
+        Console.WriteLine("O sensor apita devagar.");
+        Console.WriteLine("-----------------------------");
+    }
+
+    if (distanciaMonstro == 1)
+    {
+        Console.WriteLine("Cheiro podre muito forte!");
+        Console.WriteLine("-----------------------------");
+    }
+
+    //Condições para vitória ou derrota
     if (jogadorX == saidaX && jogadorY == saidaY)
     {
         jogadorVenceu = true;
         Console.WriteLine("Você encontrou a luz!");
+        Console.WriteLine("-----------------------------");
     }
     else if (jogadorX == monstroX && jogadorY == monstroY)
     {
         monstroVenceu = true;
         Console.WriteLine("O monstro te pegou!");
+        Console.WriteLine("-----------------------------");
     }
     else if (bateria == 0)
     {
         bateriaAcabou = true;
         Console.WriteLine("Sua lanterna apagou. Escuridão eterna.");
+        Console.WriteLine("-----------------------------");
     }
 
 } while (jogadorVenceu == false && monstroVenceu == false && bateriaAcabou == false);
