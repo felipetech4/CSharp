@@ -6,20 +6,19 @@
 */
 
 int minimoGrid = 0;
-int maximoGrid = 9;
+int maximoGrid = 10;
 int jogadorX = 0;
 int jogadorY = 0;
 int saidaX = 0;
 int saidaY = 0;
 int monstroX = 0;
 int monstroY = 0;
-string comando;
-bool comandoValido = false;
-//Ajustar o valor da bateria para 20, mudei apenas para teste.
-int bateria = 10;
+int bateria = 20;
 bool jogadorVenceu = false;
 bool monstroVenceu = false;
 bool bateriaAcabou = false;
+bool comandoValido = false;
+ConsoleKeyInfo comando;
 Random sorteador = new Random();
 
 do
@@ -57,12 +56,12 @@ do
     //Laço para os casos em que o usuário informa um comando inválido
     do
     {
-        comando = Console.ReadLine();
+        comando = Console.ReadKey();
 
-        switch (comando)
+        switch (comando.Key)
         {
-            case "W":
-                if(jogadorX == minimoGrid)
+            case ConsoleKey.W:
+                if (jogadorX == minimoGrid)
                 {
                     Console.WriteLine("Parede!");
                 }
@@ -75,8 +74,8 @@ do
                 }
                 break;
 
-            case "A":
-                if(jogadorY == minimoGrid)
+            case ConsoleKey.A:
+                if (jogadorY == minimoGrid)
                 {
                     Console.WriteLine("Parede!");
                 }
@@ -89,8 +88,8 @@ do
                 }
                 break;
 
-            case "S":
-                if(jogadorX == maximoGrid)
+            case ConsoleKey.S:
+                if (jogadorX == maximoGrid - 1)
                 {
                     Console.WriteLine("Parede!");
                 }
@@ -103,8 +102,8 @@ do
                 }
                 break;
 
-            case "D":
-                if(jogadorY == maximoGrid)
+            case ConsoleKey.D:
+                if (jogadorY == maximoGrid - 1)
                 {
                     Console.WriteLine("Parede!");
                 }
