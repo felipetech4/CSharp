@@ -14,9 +14,9 @@ int saidaY = 0;
 int monstroX = 0;
 int monstroY = 0;
 string comando;
-bool comandoValido;
+bool comandoValido = false;
 //Ajustar o valor da bateria para 20, mudei apenas para teste.
-int bateria = 5;
+int bateria = 10;
 bool jogadorVenceu = false;
 bool monstroVenceu = false;
 bool bateriaAcabou = false;
@@ -62,31 +62,59 @@ do
         switch (comando)
         {
             case "W":
-                comandoValido = true;
-                jogadorX--;
-                bateria--;
-                Console.WriteLine("Você clicou para Cima");
+                if(jogadorX == minimoGrid)
+                {
+                    Console.WriteLine("Parede!");
+                }
+                else
+                {
+                    comandoValido = true;
+                    jogadorX--;
+                    bateria--;
+                    Console.WriteLine("Você clicou para Cima");
+                }
                 break;
 
             case "A":
-                comandoValido = true;
-                jogadorY--;
-                bateria--;
-                Console.WriteLine("Você clicou para Esquerda");
+                if(jogadorY == minimoGrid)
+                {
+                    Console.WriteLine("Parede!");
+                }
+                else
+                {
+                    comandoValido = true;
+                    jogadorY--;
+                    bateria--;
+                    Console.WriteLine("Você clicou para Esquerda");
+                }
                 break;
 
             case "S":
-                comandoValido = true;
-                jogadorX++;
-                bateria--;
-                Console.WriteLine("Você clicou para Baixo");
+                if(jogadorX == maximoGrid)
+                {
+                    Console.WriteLine("Parede!");
+                }
+                else
+                {
+                    comandoValido = true;
+                    jogadorX++;
+                    bateria--;
+                    Console.WriteLine("Você clicou para Baixo");
+                }
                 break;
 
             case "D":
-                comandoValido = true;
-                jogadorY++;
-                bateria--;
-                Console.WriteLine("Você clicou para Direita");
+                if(jogadorY == maximoGrid)
+                {
+                    Console.WriteLine("Parede!");
+                }
+                else
+                {
+                    comandoValido = true;
+                    jogadorY++;
+                    bateria--;
+                    Console.WriteLine("Você clicou para Direita");
+                }
                 break;
 
             default:
