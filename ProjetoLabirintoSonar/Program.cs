@@ -1,6 +1,5 @@
 ﻿/*Pendente:
-    - Parte 6: Desafio Extra;
-    - Revisar código.
+    - Parte 6: IA do Monstro ainda não funcional;
 */
 
 int minimoGrid = 0;
@@ -61,6 +60,7 @@ do
                     comandoValido = true;
                     jogadorX--;
                     bateria--;
+                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
                 }
                 break;
 
@@ -76,6 +76,7 @@ do
                     comandoValido = true;
                     jogadorY--;
                     bateria--;
+                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
                 }
                 break;
 
@@ -91,6 +92,7 @@ do
                     comandoValido = true;
                     jogadorX++;
                     bateria--;
+                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
                 }
                 break;
 
@@ -106,6 +108,7 @@ do
                     comandoValido = true;
                     jogadorY++;
                     bateria--;
+                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
                 }
                 break;
 
@@ -121,7 +124,7 @@ do
     int distanciaSaida = Math.Abs(jogadorX - saidaX) + Math.Abs(jogadorY - saidaY);
     int distanciaMonstro = Math.Abs(jogadorX - monstroX) + Math.Abs(jogadorY - monstroY);
 
-    /*
+
     //Apenas para me localizar. Remover após implementação completa.
 
     Console.WriteLine("\n-----------------------------");
@@ -138,7 +141,7 @@ do
     Console.WriteLine("Distância Saída: " + distanciaSaida);
     Console.WriteLine("Distância Monstro: " + distanciaMonstro);
     Console.WriteLine("-----------------------------");
-    */
+
 
     //Condições para o Sistema Sonar
     if (distanciaSaida <= 2)
@@ -186,3 +189,50 @@ do
 
 } while (jogadorVenceu == false && monstroVenceu == false && bateriaAcabou == false);
 
+static (int monstroX, int monstroY) movimentarMonstro(Random sorteador, int monstroX, int monstroY, int minimoGrid, int maximoGrid)
+{
+    int numeroAleatorio = sorteador.Next(0, 4);
+    int movimentoX = 0;
+    int movimentoY = 0;
+
+    switch (numeroAleatorio)
+    {
+        case 0:
+            if (monstroY == minimoGrid)
+            {
+                goto case 1;
+            }
+            
+            movimentoY = -1;
+            break;
+
+        case 1:
+            if (monstroX == minimoGrid)
+            {
+                goto case 2;
+            }
+            movimentoX = -1;
+            break;
+        case 2:
+            if (monstroY == maximoGrid - 1)
+            {
+                goto case 3;
+            }
+            movimentoY = 1;
+            break;
+        case 3:
+            if (monstroX == maximoGrid -1)
+            {
+                goto case 0;
+            }
+            movimentoX = 1;
+            break;
+        default:
+            break;
+    }
+
+    int novoMovimentoX = monstroX + movimentoX;
+    int novoMovimentoY = monstroY + movimentoY;
+
+    return (novoMovimentoX, novoMovimentoY);
+}
