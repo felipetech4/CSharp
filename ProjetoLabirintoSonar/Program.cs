@@ -1,5 +1,7 @@
 ﻿/*Pendente:
-    - Parte 6: IA do Monstro ainda não funcional;
+    - Alterar IA do Monstro para Lista + Random;
+    - Alterar versão do .net;
+    - Migrar prints de tela para modo debug.
 */
 
 int minimoGrid = 0;
@@ -14,8 +16,7 @@ int bateria = 20;
 bool jogadorVenceu = false;
 bool monstroVenceu = false;
 bool bateriaAcabou = false;
-bool comandoValido = false;
-ConsoleKeyInfo comando;
+bool movimentoExecutado = false;
 Random sorteador = new Random();
 
 do
@@ -41,7 +42,6 @@ do
 {
     Console.WriteLine("\nInforme um comando: W(Cima), A(Esquerda), S(Baixo), D (Direita)");
 
-    //Laço para os casos em que o usuário informa um comando inválido
     do
     {
         movimentoExecutado = false;
@@ -55,9 +55,8 @@ do
     int distanciaSaida = Math.Abs(jogadorX - saidaX) + Math.Abs(jogadorY - saidaY);
     int distanciaMonstro = Math.Abs(jogadorX - monstroX) + Math.Abs(jogadorY - monstroY);
 
-
+    /*
     //Apenas para me localizar. Remover após implementação completa.
-
     Console.WriteLine("\n-----------------------------");
     Console.WriteLine("Análise após o seu movimento:");
     Console.WriteLine("-----------------------------");
@@ -72,7 +71,7 @@ do
     Console.WriteLine("Distância Saída: " + distanciaSaida);
     Console.WriteLine("Distância Monstro: " + distanciaMonstro);
     Console.WriteLine("-----------------------------");
-
+    */
 
     //Condições para o Sistema Sonar
     if (distanciaSaida <= 2)
