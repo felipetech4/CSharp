@@ -189,46 +189,34 @@ do
 
 } while (jogadorVenceu == false && monstroVenceu == false && bateriaAcabou == false);
 
-static (int monstroX, int monstroY) movimentarMonstro(Random sorteador, int monstroX, int monstroY, int minimoGrid, int maximoGrid)
+//Métodos de movimentação do jogador e monstro
+
+static bool moverJogador(ConsoleKey tecla, int minimoGrid, int maximoGrid, ref int jogadorX, ref int jogadorY, ref int bateria)
 {
     int numeroAleatorio = sorteador.Next(0, 4);
     int movimentoX = 0;
     int movimentoY = 0;
 
-    switch (numeroAleatorio)
+    switch (tecla)
     {
-        case 0:
-            if (monstroY == minimoGrid)
-            {
-                goto case 1;
-            }
-            
-            movimentoY = -1;
-            break;
-
-        case 1:
-            if (monstroX == minimoGrid)
-            {
-                goto case 2;
-            }
+        case ConsoleKey.W:
             movimentoX = -1;
             break;
-        case 2:
-            if (monstroY == maximoGrid - 1)
-            {
-                goto case 3;
-            }
-            movimentoY = 1;
-            break;
-        case 3:
-            if (monstroX == maximoGrid -1)
-            {
-                goto case 0;
-            }
+        case ConsoleKey.S:
             movimentoX = 1;
             break;
-        default:
+        case ConsoleKey.A:
+            movimentoY = -1;
             break;
+        case ConsoleKey.D:
+            movimentoY = 1;
+            break;
+        default:
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Informe um comando válido.");
+            Console.WriteLine("-----------------------------");
+            return false;
     }
 
     int novoJogadorX = jogadorX + movimentoX;
