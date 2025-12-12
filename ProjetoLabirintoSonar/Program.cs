@@ -44,82 +44,13 @@ do
     //Laço para os casos em que o usuário informa um comando inválido
     do
     {
-        comando = Console.ReadKey();
+        movimentoExecutado = false;
+        ConsoleKey comando = Console.ReadKey(true).Key;
+        movimentoExecutado = moverJogador(comando, minimoGrid, maximoGrid, ref jogadorX, ref jogadorY, ref bateria);
 
-        switch (comando.Key)
-        {
-            case ConsoleKey.W:
-                if (jogadorX == minimoGrid)
-                {
-                    Console.WriteLine("\n-----------------------------");
-                    Console.WriteLine("\nParede!");
-                    Console.WriteLine("-----------------------------");
-                }
-                else
-                {
-                    comandoValido = true;
-                    jogadorX--;
-                    bateria--;
-                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
-                }
-                break;
+    } while (movimentoExecutado == false);
 
-            case ConsoleKey.A:
-                if (jogadorY == minimoGrid)
-                {
-                    Console.WriteLine("\n-----------------------------");
-                    Console.WriteLine("\nParede!");
-                    Console.WriteLine("-----------------------------");
-                }
-                else
-                {
-                    comandoValido = true;
-                    jogadorY--;
-                    bateria--;
-                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
-                }
-                break;
-
-            case ConsoleKey.S:
-                if (jogadorX == maximoGrid - 1)
-                {
-                    Console.WriteLine("\n-----------------------------");
-                    Console.WriteLine("\nParede!");
-                    Console.WriteLine("-----------------------------");
-                }
-                else
-                {
-                    comandoValido = true;
-                    jogadorX++;
-                    bateria--;
-                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
-                }
-                break;
-
-            case ConsoleKey.D:
-                if (jogadorY == maximoGrid - 1)
-                {
-                    Console.WriteLine("\n-----------------------------");
-                    Console.WriteLine("\nParede!");
-                    Console.WriteLine("-----------------------------");
-                }
-                else
-                {
-                    comandoValido = true;
-                    jogadorY++;
-                    bateria--;
-                    (monstroX, monstroY) = movimentarMonstro(sorteador, monstroX, monstroY, minimoGrid, maximoGrid);
-                }
-                break;
-
-            default:
-                comandoValido = false;
-                Console.WriteLine("\n-----------------------------");
-                Console.WriteLine("Informe um comando válido:");
-                break;
-        }
-    } while (comandoValido == false);
-
+    moverMonstro(sorteador, ref monstroX, ref monstroY, minimoGrid, maximoGrid);
 
     int distanciaSaida = Math.Abs(jogadorX - saidaX) + Math.Abs(jogadorY - saidaY);
     int distanciaMonstro = Math.Abs(jogadorX - monstroX) + Math.Abs(jogadorY - monstroY);
@@ -193,7 +124,6 @@ do
 
 static bool moverJogador(ConsoleKey tecla, int minimoGrid, int maximoGrid, ref int jogadorX, ref int jogadorY, ref int bateria)
 {
-    int numeroAleatorio = sorteador.Next(0, 4);
     int movimentoX = 0;
     int movimentoY = 0;
 
