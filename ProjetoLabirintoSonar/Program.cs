@@ -231,8 +231,67 @@ static (int monstroX, int monstroY) movimentarMonstro(Random sorteador, int mons
             break;
     }
 
-    int novoMovimentoX = monstroX + movimentoX;
-    int novoMovimentoY = monstroY + movimentoY;
+    int novoJogadorX = jogadorX + movimentoX;
+    int novoJogadorY = jogadorY + movimentoY;
 
-    return (novoMovimentoX, novoMovimentoY);
+    bool saiuDoGrid = novoJogadorX < minimoGrid || novoJogadorX >= maximoGrid
+    || novoJogadorY < minimoGrid || novoJogadorY >= maximoGrid;
+
+    if (saiuDoGrid)
+    {
+        Console.WriteLine();
+        Console.WriteLine("-----------------------------");
+        Console.WriteLine("Parede!");
+        Console.WriteLine("-----------------------------");
+        return false;
+    }
+
+    jogadorX = novoJogadorX;
+    jogadorY = novoJogadorY;
+    bateria = Math.Max(0, bateria - 1);
+    return true;
+}
+
+static bool moverMonstro(Random sorteador, ref int monstroX, ref int monstroY, int minimoGrid, int maximoGrid)
+{
+    int movimentoX = 0;
+    int movimentoY = 0;
+
+    int numeroAleatorio = sorteador.Next(0, 2);
+
+    if (numeroAleatorio == 0)
+    {
+        movimentoX = -1;
+    }
+    else if (numeroAleatorio == 1)
+    {
+        movimentoX = 1;
+    }
+
+    numeroAleatorio = sorteador.Next(2, 4);
+
+    if (numeroAleatorio == 2)
+    {
+        movimentoY = -1;
+    }
+    else if (numeroAleatorio == 3)
+    {
+        movimentoY = 1;
+    }
+
+    int novoMonstroX = monstroX + movimentoX;
+    int novoMonstroY = monstroY + movimentoY;
+
+    bool saiuDoGrid = novoMonstroX < minimoGrid || novoMonstroX >= maximoGrid
+    || novoMonstroY < minimoGrid || novoMonstroY >= maximoGrid;
+
+    if (saiuDoGrid)
+    {
+        return false;
+    }
+
+    monstroX = novoMonstroX;
+    monstroY = novoMonstroY;
+
+    return true;
 }
