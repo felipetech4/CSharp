@@ -1,10 +1,4 @@
-﻿/*Pendente:
-    - Alterar IA do Monstro para Lista + Random;
-    - Alterar versão do .net;
-    - Migrar prints de tela para modo debug.
-*/
-
-int minimoGrid = 0;
+﻿int minimoGrid = 0;
 int maximoGrid = 10;
 int jogadorX = 0;
 int jogadorY = 0;
@@ -54,24 +48,6 @@ do
 
     int distanciaSaida = Math.Abs(jogadorX - saidaX) + Math.Abs(jogadorY - saidaY);
     int distanciaMonstro = Math.Abs(jogadorX - monstroX) + Math.Abs(jogadorY - monstroY);
-
-    /*
-    //Apenas para me localizar. Remover após implementação completa.
-    Console.WriteLine("\n-----------------------------");
-    Console.WriteLine("Análise após o seu movimento:");
-    Console.WriteLine("-----------------------------");
-    Console.WriteLine("Jogador X: " + jogadorX);
-    Console.WriteLine("Jogador Y: " + jogadorY);
-    Console.WriteLine("Saída X: " + saidaX);
-    Console.WriteLine("Saída Y: " + saidaY);
-    Console.WriteLine("Monstro X: " + monstroX);
-    Console.WriteLine("Monstro Y: " + monstroY);
-    Console.WriteLine("Bateria: " + bateria);
-    Console.WriteLine("-----------------------------");
-    Console.WriteLine("Distância Saída: " + distanciaSaida);
-    Console.WriteLine("Distância Monstro: " + distanciaMonstro);
-    Console.WriteLine("-----------------------------");
-    */
 
     //Condições para o Sistema Sonar
     if (distanciaSaida <= 2)
