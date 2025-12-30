@@ -32,7 +32,7 @@ public class TarefasController: ControllerBase
     [HttpPut("alterar")]
     public ActionResult<Tarefa> AlterarTarefa([FromBody] Tarefa tarefaAlterada)
     {
-        Tarefa tarefaParaAlterar = listaDeTarefas.FirstOrDefault(t => t.Id == tarefaAlterada.Id);
+        Tarefa? tarefaParaAlterar = listaDeTarefas.FirstOrDefault(t => t.Id == tarefaAlterada.Id);
         if(tarefaParaAlterar is null)
         {
             return NotFound("Id da tarefa não encontrado.");
@@ -47,7 +47,7 @@ public class TarefasController: ControllerBase
     [HttpDelete("deletar/{id}")]
     public ActionResult DeletarTarefa(int id)
     {
-        Tarefa tarefaParaExcluir = listaDeTarefas.FirstOrDefault(t => t.Id == id);
+        Tarefa? tarefaParaExcluir = listaDeTarefas.FirstOrDefault(t => t.Id == id);
 
         if(tarefaParaExcluir is null)
         {
