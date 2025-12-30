@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -14,7 +15,7 @@ public class TarefasController: ControllerBase
     }
 
     [HttpPost("incluir")]
-    public ActionResult<Tarefa> IncluirTarefas([FromBody] Tarefa novaTarefa)
+    public ActionResult<Tarefa> IncluirTarefa([FromBody] Tarefa novaTarefa)
     {
         if(listaDeTarefas.Where(w => w.Nome.Equals(novaTarefa.Nome)).Any())
         {
@@ -26,6 +27,36 @@ public class TarefasController: ControllerBase
 
         listaDeTarefas.Add(novaTarefa);
         return novaTarefa;
+    }
+
+    [HttpPut("alterar")]
+    public ActionResult<Tarefa> AlterarTarefa([FromBody] Tarefa tarefaAlterada)
+    {
+        Tarefa tarefaParaAlterar = listaDeTarefas.FirstOrDefault(t => t.Id == tarefaAlterada.Id);
+        if(tarefaParaAlterar is null)
+        {
+            return NotFound("Id da tarefa não encontrado.");
+        }
+
+        tarefaParaAlterar.Nome = tarefaAlterada.Nome;
+        tarefaParaAlterar.Concluida = tarefaAlterada.Concluida;
+
+        return tarefaAlterada;
+    }
+    
+    [HttpDelete("deletar/{id}")]
+    public ActionResult DeletarTarefa(int id)
+    {
+        Tarefa tarefaParaExcluir = listaDeTarefas.FirstOrDefault(t => t.Id == id);
+
+        if(tarefaParaExcluir is null)
+        {
+            return NotFound("Id da tarefa não encontrado.");
+        }
+
+        listaDeTarefas.Remove(tarefaParaExcluir);
+
+        return NoContent();
     }
 }
 

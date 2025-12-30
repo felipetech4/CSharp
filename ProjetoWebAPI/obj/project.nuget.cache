@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U/pNROGEZGU=",
+  "dgSpecHash": "M5UusjXf/II=",
   "success": true,
-  "projectFilePath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj",
+  "projectFilePath": "c:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\felipe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.22\\microsoft.aspnetcore.openapi.8.0.22.nupkg.sha512",
     "C:\\Users\\felipe\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
