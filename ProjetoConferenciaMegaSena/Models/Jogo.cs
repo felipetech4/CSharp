@@ -1,3 +1,5 @@
+namespace ProjetoConferenciaMegaSena.Models;
+
 public class Jogo
 {
     public int JogoId {get; set;}

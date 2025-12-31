@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoConferenciaMegaSena")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2318f9556266543ebe2d01f9ddbd3b4cdcfaa817")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24d92d71624f1d59305ca7b6e05829b79348f79f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoConferenciaMegaSena")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoConferenciaMegaSena")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
