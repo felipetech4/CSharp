@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj": {}
+    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoControleFinanceiro\\ProjetoControleFinanceiro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj": {
+    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoControleFinanceiro\\ProjetoControleFinanceiro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj",
-        "projectName": "ProjetoWebAPI",
-        "projectPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\ProjetoWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoControleFinanceiro\\ProjetoControleFinanceiro.csproj",
+        "projectName": "ProjetoControleFinanceiro",
+        "projectPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoControleFinanceiro\\ProjetoControleFinanceiro.csproj",
         "packagesPath": "C:\\Users\\felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoWebAPI\\obj\\",
+        "outputPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoControleFinanceiro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
