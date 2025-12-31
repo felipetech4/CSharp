@@ -17,7 +17,7 @@ public class DespesasController: ControllerBase
     [HttpPost("cadastrar")]
     public ActionResult<Despesa> CadastrarDespesa([FromBody] Despesa novaDespesa)
     {
-        if(listaDeDespesas.Where(d => d.Descricao.Equals(novaDespesa.Descricao)).Any())
+        if(listaDeDespesas.Any(d => d.Descricao.Equals(novaDespesa.Descricao)))
         {
             return BadRequest ("Já existe uma despesa com a mesma descrição.");
         }
@@ -27,6 +27,38 @@ public class DespesasController: ControllerBase
 
         listaDeDespesas.Add(novaDespesa);
         return Ok(novaDespesa);
+    }
+
+    [HttpPut("alterar/{id}")]
+    public ActionResult<Despesa> AlterarDespesa(int id, [FromBody] Despesa despesaParaAlterar)
+    {
+        Despesa? despesaAlterada = listaDeDespesas.FirstOrDefault(d => d.Id == id);
+
+        if(despesaParaAlterar is null)
+        {
+            return BadRequest("Id da despesa não encontrado.");
+        }
+
+        despesaParaAlterar.Descricao = despesaAlterada.Descricao;
+        despesaParaAlterar.Valor = despesaAlterada.Valor;
+        despesaParaAlterar.StatusPago = despesaAlterada.StatusPago;
+
+        return despesaAlterada;
+    }
+
+    [HttpDelete ("deletar/{id}")]
+    public ActionResult DeletarDespesa(int id)
+    {
+        Despesa? despesaParaDeletar = listaDeDespesas.FirstOrDefault(d => d.Id == id);
+
+        if(despesaParaDeletar is null)
+        {
+            return BadRequest("Id da despesa não encontrado.");
+        }
+
+        listaDeDespesas.Remove(despesaParaDeletar);
+
+        return NoContent();
     }
 }
 
