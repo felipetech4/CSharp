@@ -5,5 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 public class HeroisController : ControllerBase
 {
+    private static List<Heroi> listaDeHerois = [];
+
+    [HttpGet]
+    public ActionResult<List<Heroi>> listarHerois()
+    {
+        return Ok(listaDeHerois);
+    }
+
     
 }
