@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj": {}
+    "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj": {
+    "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
+        "projectUniqueName": "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
         "projectName": "ProjetoCoracaoDigitalDaGuilda",
-        "projectPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
+        "projectPath": "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
         "packagesPath": "C:\\Users\\felipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\obj\\",
+        "outputPath": "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
