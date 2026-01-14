@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U3l/EC15c0s=",
+  "dgSpecHash": "M5x6O2jRUo8=",
   "success": true,
-  "projectFilePath": "c:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
+  "projectFilePath": "C:\\Users\\felipe\\Projetos\\C#\\ProjetoCoracaoDigitalDaGuilda\\ProjetoCoracaoDigitalDaGuilda.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\felipe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.22\\microsoft.aspnetcore.openapi.8.0.22.nupkg.sha512",
     "C:\\Users\\felipe\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

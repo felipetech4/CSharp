@@ -13,5 +13,16 @@ public class HeroisController : ControllerBase
         return Ok(listaDeHerois);
     }
 
-    
+    private static List<string> listaDeApresentacoes = [];
+
+    [HttpGet("apresentacoes")]
+    public ActionResult<List<string>> apresentarHerois()
+    {
+        foreach (var heroi in listaDeHerois)
+        {
+            listaDeApresentacoes.Add(heroi.Apresentar());
+        }
+
+        return listaDeApresentacoes;
+    }
 }
