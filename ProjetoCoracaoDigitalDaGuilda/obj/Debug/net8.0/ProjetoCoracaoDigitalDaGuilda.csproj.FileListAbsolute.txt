@@ -32,3 +32,4 @@ C:\Users\felipe\Projetos\C#\ProjetoCoracaoDigitalDaGuilda\obj\Debug\net8.0\refin
 C:\Users\felipe\Projetos\C#\ProjetoCoracaoDigitalDaGuilda\obj\Debug\net8.0\ProjetoCoracaoDigitalDaGuilda.pdb
 C:\Users\felipe\Projetos\C#\ProjetoCoracaoDigitalDaGuilda\obj\Debug\net8.0\ProjetoCoracaoDigitalDaGuilda.genruntimeconfig.cache
 C:\Users\felipe\Projetos\C#\ProjetoCoracaoDigitalDaGuilda\obj\Debug\net8.0\ref\ProjetoCoracaoDigitalDaGuilda.dll
+C:\Users\felipe\Projetos\C#\ProjetoCoracaoDigitalDaGuilda\bin\Debug\net8.0\Docs\CoracaoGuildaAPI.postman_collection.json
