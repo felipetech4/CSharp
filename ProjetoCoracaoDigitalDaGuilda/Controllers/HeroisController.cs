@@ -8,15 +8,15 @@ public class HeroisController : ControllerBase
     private static List<Heroi> listaDeHerois = [];
 
     [HttpGet]
-    public ActionResult<List<Heroi>> listarHerois()
+    public ActionResult<List<Heroi>> ListarHerois()
     {
         return Ok(listaDeHerois);
     }
 
-    private static List<string> listaDeApresentacoes = [];
+    private List<string> listaDeApresentacoes = [];
 
     [HttpGet("apresentacoes")]
-    public ActionResult<List<string>> apresentarHerois()
+    public ActionResult<List<string>> ApresentarHerois()
     {
         foreach (var heroi in listaDeHerois)
         {
