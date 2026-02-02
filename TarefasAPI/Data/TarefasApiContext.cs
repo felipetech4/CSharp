@@ -9,9 +9,9 @@ namespace TarefasAPI.Data
 
         }
 
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
 
-        public DbSet<Tarefa> Tarefas { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
 
 
         // protected override void OModelCreating(ModelBuilder modelo)
